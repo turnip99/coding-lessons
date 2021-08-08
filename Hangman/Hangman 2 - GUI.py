@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter.font import BOLD
 from PIL import ImageTk, Image
-import PIL
 
 lives = 0
 guessed_letters = []
@@ -53,7 +52,6 @@ def run_guessing_window(word):
             if letter == guess:
                 guessed_word = guessed_word[:i] + letter + guessed_word[i + 1:]
         return guessed_word
-
 
     def show_image():
         filename = "State Images/Lives " + str(lives) + ".png"
