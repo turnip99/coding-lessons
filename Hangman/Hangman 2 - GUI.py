@@ -6,10 +6,6 @@ lives = 0
 guessed_letters = []
 guessed_word = ""
 
-class ImageLabel(Label):
-    def __str__(self):
-        return self.image
-
 # Run setup window.
 def run_setup_window():
 
@@ -60,8 +56,7 @@ def run_guessing_window(word):
     def show_image():
         filename = "State Images/Lives " + str(lives) + ".png"
         image = Image.open(filename)
-        image_resize = image
-        image_tk = ImageTk.PhotoImage(image=image_resize)
+        image_tk = ImageTk.PhotoImage(image=image)
         window_guessing.update_idletasks()
         lbl_image.configure(image=image_tk)
         lbl_image.image = image_tk
