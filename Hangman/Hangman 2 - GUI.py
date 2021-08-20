@@ -47,6 +47,10 @@ def run_guessing_window(word):
     global guessed_letters
     global guessed_word
 
+    lives = 10
+    guessed_letters = []
+    guessed_word = "*" * len(word)
+
     def replace_characters(word, guessed_word, guess):
         for i, letter in enumerate(word):
             if letter == guess:
@@ -103,10 +107,7 @@ def run_guessing_window(word):
         lbl_answer["text"] = "The word was: " + word
         btn_guess_input.config(state="disabled")
         txt_guess_input.config(state="disabled")
-            
-    lives = 10
-    guessed_letters = []
-    guessed_word = "*" * len(word)
+        txt_guess_input.unbind('<Return>')
 
     # Configure UI.
     window_guessing = Toplevel()
